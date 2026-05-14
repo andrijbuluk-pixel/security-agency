@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Security Agency</h1>
+	<p>Welcome to Best Security Agency!</p>
+
+
+	<ul>
+		<li><strong>Guard</strong> {{ num_guard }}</li>
+		<li><strong>Client</strong> {{ num_client }}</li>
+	</ul>
+
+	<p>You have visited this page
+		{{ num_visits }} time{{ num_visits|pluralize }}.
+	</p>
+
+{% endblock %}
