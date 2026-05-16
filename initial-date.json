@@ -39,6 +39,7 @@
     "model": "security.guard",
     "pk": 1,
     "fields": {
+      "username": "Garnish",
       "first_name": "Alexander",
       "last_name": "Kovalchuk",
       "email": "kovalchuk.sec@agency.com",
@@ -52,6 +53,7 @@
     "model": "security.guard",
     "pk": 2,
     "fields": {
+      "username": "Spray",
       "first_name": "Dmitry",
       "last_name": "Marchenko",
       "email": "d.marchenko@agency.com",
@@ -65,6 +67,7 @@
     "model": "security.guard",
     "pk": 3,
     "fields": {
+      "username": "Chic",
       "first_name": "Artem",
       "last_name": "Belov",
       "email": "belov.fast@agency.com",
@@ -78,6 +81,7 @@
     "model": "security.guard",
     "pk": 4,
     "fields": {
+      "username": "Wile",
       "first_name": "Olena",
       "last_name": "Savchenko",
       "email": "o.savchenko@agency.com",
@@ -91,6 +95,7 @@
     "model": "security.guard",
     "pk": 5,
     "fields": {
+      "username": "Alpha",
       "first_name": "Maxim",
       "last_name": "Zaliznyak",
       "email": "iron.max@agency.com",
@@ -104,6 +109,7 @@
     "model": "security.guard",
     "pk": 6,
     "fields": {
+      "username": "Beta",
       "first_name": "Ihor",
       "last_name": "Doroshenko",
       "email": "doroshenko.control@agency.com",
