@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "crispy_forms",
-    "security"
+    "crispy_bootstrap5",
+    "security",
 ]
 
 MIDDLEWARE = [
@@ -114,3 +115,5 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 AUTH_USER_MODEL = 'security.Client'
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
