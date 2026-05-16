@@ -39,9 +39,11 @@
     "model": "security.guard",
     "pk": 1,
     "fields": {
+      "username": "Garnish",
       "first_name": "Alexander",
       "last_name": "Kovalchuk",
       "email": "kovalchuk.sec@agency.com",
+      "license_number": "UA-SEC-001",
       "callsign": "GRANITE",
       "badge_number": "UA-SEC-001",
       "contract_phone": "+3805001112233",
@@ -52,9 +54,11 @@
     "model": "security.guard",
     "pk": 2,
     "fields": {
+      "username": "Spray",
       "first_name": "Dmitry",
       "last_name": "Marchenko",
       "email": "d.marchenko@agency.com",
+      "license_number": "UA-SEC-002",
       "callsign": "HACKER",
       "badge_number": "UA-SEC-012",
       "contract_phone": "+3806744405566",
@@ -65,9 +69,11 @@
     "model": "security.guard",
     "pk": 3,
     "fields": {
+      "username": "Chic",
       "first_name": "Artem",
       "last_name": "Belov",
       "email": "belov.fast@agency.com",
+      "license_number": "UA-SEC-003",
       "callsign": "METEOR",
       "badge_number": "UA-SEC-007",
       "contract_phone": "+3809377788099",
@@ -78,9 +84,11 @@
     "model": "security.guard",
     "pk": 4,
     "fields": {
+      "username": "Wile",
       "first_name": "Olena",
       "last_name": "Savchenko",
       "email": "o.savchenko@agency.com",
+      "license_number": "UA-SEC-004",
       "callsign": "OWL",
       "badge_number": "UA-SEC-015",
       "contract_phone": "+3806310110022",
@@ -91,9 +99,11 @@
     "model": "security.guard",
     "pk": 5,
     "fields": {
+      "username": "Alpha",
       "first_name": "Maxim",
       "last_name": "Zaliznyak",
       "email": "iron.max@agency.com",
+      "license_number": "UA-SEC-005",
       "callsign": "SHOCK",
       "badge_number": "UA-SEC-003",
       "contract_phone": "+3809588083311",
@@ -104,9 +114,11 @@
     "model": "security.guard",
     "pk": 6,
     "fields": {
+      "username": "Beta",
       "first_name": "Ihor",
       "last_name": "Doroshenko",
       "email": "doroshenko.control@agency.com",
+      "license_number": "UA-SEC-006",
       "callsign": "CENTER",
       "badge_number": "UA-SEC-020",
       "contract_phone": "+3806822209944",
@@ -171,7 +183,7 @@
     "model": "security.client",
     "pk": 1,
     "fields": {
-      "pseudonym": "Shadow_Architect",
+      "username": "Shadow_Architect",
       "email": "arch.contact@private.io",
       "password": "pbkdf2_sha256$260000$random_hash_1_xyz",
       "created_at": "2024-01-15 10:30:00"
@@ -181,7 +193,7 @@
     "model": "security.client",
     "pk": 2,
     "fields": {
-      "pseudonym": "Phoenix_Rising",
+      "username": "Phoenix_Rising",
       "email": "p.rising@web-mail.net",
       "password": "pbkdf2_sha256$260000$random_hash_2_abc",
       "created_at": "2024-05-20 14:45:12"
@@ -191,7 +203,7 @@
     "model": "security.client",
     "pk": 3,
     "fields": {
-      "pseudonym": "Silver_Shield",
+      "username": "Silver_Shield",
       "email": "s.shield@secure-line.com",
       "password": "pbkdf2_sha256$260000$random_hash_3_def",
       "created_at": "2025-08-10 09:00:05"
@@ -201,7 +213,7 @@
     "model": "security.client",
     "pk": 4,
     "fields": {
-      "pseudonym": "Deep_Blue_Ocean",
+      "username": "Deep_Blue_Ocean",
       "email": "blue.ocean@deep-sea.com",
       "password": "pbkdf2_sha256$260000$random_hash_4_ghi",
       "created_at": "2025-11-25 21:15:00"
@@ -211,7 +223,7 @@
     "model": "security.client",
     "pk": 5,
     "fields": {
-      "pseudonym": "Neon_City_Admin",
+      "username": "Neon_City_Admin",
       "email": "city.admin@neon-net.org",
       "password": "pbkdf2_sha256$260000$random_hash_5_jkl",
       "created_at": "2026-02-01 12:00:00"
@@ -221,7 +233,7 @@
     "model": "security.client",
     "pk": 6,
     "fields": {
-      "pseudonym": "Night_Watcher",
+      "username": "Night_Watcher",
       "email": "watcher@night-ops.com",
       "password": "pbkdf2_sha256$260000$random_hash_6_mno",
       "created_at": "2026-05-14 18:30:45"
