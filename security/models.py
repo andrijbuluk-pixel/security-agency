@@ -5,6 +5,17 @@ from django.db import models
 class Client(AbstractUser):
     created_at = models.DateTimeField(auto_now_add=True)
 
+    first_name = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True
+    )
+    last_name = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True
+    )
+
 class ProtectionType(models.Model):
     type = models.TextField()
 
