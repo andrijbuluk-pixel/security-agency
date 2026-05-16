@@ -8,12 +8,14 @@ class Client(AbstractUser):
     first_name = models.CharField(
         max_length=255,
         blank=True,
-        null=True
+        null=True,
+        default=""
     )
     last_name = models.CharField(
         max_length=255,
         blank=True,
-        null=True
+        null=True,
+        default=""
     )
 
 class ProtectionType(models.Model):
