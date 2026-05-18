@@ -2,7 +2,11 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from .forms import GuardUsernameSearchForm, GuardCreationForm
+from .forms import (
+    GuardUsernameSearchForm,
+    GuardCreationForm,
+    GuardLicenseUpdateForm,
+)
 from .models import Guard, Client
 
 
@@ -46,6 +50,20 @@ class GuardCreateView(generic.CreateView):
     form_class = GuardCreationForm
 
 
+class GuardDetailView(generic.DetailView):
+    model = Guard
+    queryset = Guard.objects.all().prefetch_related("equipment")
+
+
+class GuardLicenseUpdateView(generic.UpdateView):
+    model = Guard
+    form_class = GuardLicenseUpdateForm
+    success_url = reverse_lazy("security:guard-list")
+
+
+class GuardDeleteView(generic.DeleteView):
+    model = Guard
+    success_url = reverse_lazy("")
 
 
 class ClientListView(generic.ListView):

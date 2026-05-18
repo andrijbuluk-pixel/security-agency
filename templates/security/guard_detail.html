@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+	  <h1>
+	    Username: {{ guard.username }}
+	    <a href="{% url 'security:guard-delete' pk=guard.id %}" class="btn btn-danger link-to-page">
+	      Delete
+	    </a>
+
+	    <a href="{% url 'security:guard-update' pk=guard.id %}" class="btn btn-secondary link-to-page">
+	      Update profile
+	    </a>
+	  </h1>
+
+
+	<p><strong>First name:</strong> {{ guard.first_name }}</p>
+	<p><strong>Last name:</strong> {{ guard.last_name }}</p>
+	<p><strong>License number:</strong> {{ guard.license_number }}</p>
+	<p><strong>License number:</strong> {{ guard.callsign }}</p>
+	<p><strong>License number:</strong> {{ guard.badge_number }}</p>
+	<p><strong>License number:</strong> {{ guard.contract_phone }}</p>
+
+	<div class="ml-3">
+		<h4>Equipment</h4>
+
+		{% for equipment in guard.equipment.all %}
+			<hr>
+			<p><strong>Name:</strong> {{ equipment.name }}</p>
+			<p><strong>Serial number:</strong> {{ equipment.serial_number }}</p>
+			<p><strong>Inventory number:</strong> {{ equipment.inventory_number }}</p>
+			<p class="text-muted"><strong>Id:</strong> {{ car.id }}</p>
+
+		{% empty %}
+			<p>No equipment!</p>
+		{% endfor %}
+	</div>
+{% endblock %}

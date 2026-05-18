@@ -25,14 +25,30 @@ class GuardCreationForm(forms.ModelForm):
             "first_name",
             "last_name",
             "email",
-            "license_number",
             "callsign",
-            "badge_number",
             "contract_phone"
         )
 
     def clean_license_number(self):
-        return validate_license_number(self.cleaned_data["license_number"])
+        return validate_license_number(
+            self.cleaned_data
+            ["badge_number"]
+        )
+
+
+class GuardLicenseUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Guard
+        fields = ["contract_phone", "callsign", "badge_number"]
+
+    def clean_license_number(self):
+        return validate_license_number(
+            self.cleaned_data[
+                "badge_number",
+                "callsign",
+                "contract_phone",
+            ]
+        )
 
 
 

@@ -27,7 +27,7 @@
 			{% for guard in guard_list %}
 				<tr>
 					<td>{{ guard.id }}</td>
-					<td>{{ guard.username }}</td>
+					<td><a href="{{ guard.get_absolute_url }}">{{ guard.username }}</a></td>
 					<td>{{ guard.first_name }}</td>
 					<td>{{ guard.last_name }}</td>
 					<td>{{ guard.license_number }}</td>
