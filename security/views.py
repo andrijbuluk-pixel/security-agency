@@ -6,9 +6,10 @@ from .forms import (
     GuardUsernameSearchForm,
     GuardCreationForm,
     GuardLicenseUpdateForm,
-    ObjectNameSearchForm
+    ObjectNameSearchForm,
+    ContractCreateForm
 )
-from .models import Guard, Client, Object
+from .models import Guard, Client, Object, Contract
 
 
 def index(request):
@@ -90,3 +91,10 @@ class ObjectListView(generic.ListView):
         if name:
             return queryset.filter(name__icontains=name)
         return queryset
+
+
+class ContractCreate(generic.CreateView):
+    model = Contract
+    form_class = ContractCreateForm
+    template_name = "security/object_form.html"
+    success_url = reverse_lazy("security:new-object-list")
