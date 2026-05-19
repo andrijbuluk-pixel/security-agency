@@ -77,7 +77,7 @@ class GuardUsernameSearchForm(forms.Form):
 
 
 class ObjectNameSearchForm(forms.Form):
-    username = forms.CharField(
+    name = forms.CharField(
         max_length=255,
         required=False,
         label="",

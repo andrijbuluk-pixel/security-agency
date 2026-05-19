@@ -73,10 +73,12 @@ class ClientListView(generic.ListView):
 
 class ObjectListView(generic.ListView):
     model = Object
+    context_object_name = "objects_list"
+    template_name = "security/object_list.html"
     paginate_by = 5
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        context = super(ObjectListView, self).get_context_data(**kwargs)
+        context = super(ObjectListView, self).get_context_data()
 
         context["search_form"] = ObjectNameSearchForm()
         return context
@@ -86,5 +88,5 @@ class ObjectListView(generic.ListView):
         name = self.request.GET.get("name", "")
 
         if name:
-            return queryset.filter(username__icontains=name)
+            return queryset.filter(name__icontains=name)
         return queryset

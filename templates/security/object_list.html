@@ -19,7 +19,7 @@
 		<table class="table">
 			<tr>
 				<th>ID</th>
-{#				<th>Name</th>#}
+				<th>Name</th>
 				<th>address</th>
 				<th>type_protection</th>
 				<th>Update</th>
@@ -29,9 +29,11 @@
 			{% for object in object_list %}
 				<tr>
 					<td>{{ object.id }}</td>
-{#					<td>{{ guard.name }}</a></td>#}
+					<td>{{ object.name }}</td>
 					<td>{{ object.address }}</td>
 					<td>{{ object.type_protection.type }}</td>
+					<td>Update</td>
+					<td>Delete</td>
 				</tr>
 			{% endfor %}
 
