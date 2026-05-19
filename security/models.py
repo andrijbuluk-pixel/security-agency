@@ -54,6 +54,7 @@ class Guard(models.Model):
 
 
 class Object(models.Model):
+    name = models.CharField(max_length=255)
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     address = models.CharField(max_length=255)
     type_protection = models.ForeignKey(ProtectionType, on_delete=models.CASCADE)
