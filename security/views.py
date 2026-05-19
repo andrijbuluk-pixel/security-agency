@@ -7,7 +7,7 @@ from .forms import (
     GuardCreationForm,
     GuardLicenseUpdateForm,
 )
-from .models import Guard, Client
+from .models import Guard, Client, Object
 
 
 def index(request):
@@ -68,3 +68,7 @@ class GuardDeleteView(generic.DeleteView):
 
 class ClientListView(generic.ListView):
     model = Client
+
+
+class ObjectListView(generic.ListView):
+    model = Object

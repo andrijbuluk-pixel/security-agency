@@ -8,6 +8,7 @@ from .views import (
     GuardDetailView,
     GuardLicenseUpdateView,
     GuardDeleteView,
+    ObjectListView,
 
 )
 
@@ -31,6 +32,7 @@ urlpatterns = [
 
     path("client/", ClientListView.as_view(), name="client-list"),
 
+    path("object/", ObjectListView.as_view(), name="object-list"),
 ]
 
 app_name = "security"
