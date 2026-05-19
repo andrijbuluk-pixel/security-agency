@@ -7,7 +7,8 @@ from .forms import (
     GuardCreationForm,
     GuardLicenseUpdateForm,
     ObjectNameSearchForm,
-    ContractCreateForm
+    ContractCreateForm,
+    ObjectCreateForm
 )
 from .models import Guard, Client, Object, Contract
 
@@ -98,3 +99,10 @@ class ContractCreate(generic.CreateView):
     form_class = ContractCreateForm
     template_name = "security/object_form.html"
     success_url = reverse_lazy("security:new-object-list")
+
+
+class ObjectCreate(generic.CreateView):
+    model = Object
+    form_class = ObjectCreateForm
+    template_name = "security/object_form.html"
+    success_url = reverse_lazy("security:object-list")

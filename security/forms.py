@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 
-from security.models import Guard, Object, Contract
+from security.models import Guard, Object, Contract, ProtectionType
 
 
 class GuardForm(forms.ModelForm):
@@ -57,8 +57,36 @@ class ContractCreateForm(forms.ModelForm):
             "number_document",
             "signing",
             "validity_period",
-            "price"
+            "price",
         ]
+
+        widgets = {
+            "signing": forms.DateInput(attrs={"type": "date"}),
+            "validity_period": forms.NumberInput(attrs={"placeholder": "Number of days"}),
+        }
+
+
+class ObjectCreateForm(forms.ModelForm):
+    client = forms.ModelChoiceField(
+        queryset=get_user_model().objects.all(),
+    )
+
+    class Meta:
+        model = Object
+        fields = [
+            "name",
+            "address",
+            "type_protection",
+            "client",
+            "guardian",
+            "contract",
+        ]
+
+        widgets = {
+            "contract": forms.Select,
+            "guardian": forms.SelectMultiple,
+            "type_protection": forms.Select,
+        }
 
 
 def validate_license_number(

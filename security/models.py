@@ -25,8 +25,12 @@ class Client(AbstractUser):
         default=""
     )
 
+
 class ProtectionType(models.Model):
     type = models.TextField()
+
+    def __str__(self):
+        return self.type
 
 
 class Contract(models.Model):
@@ -34,6 +38,9 @@ class Contract(models.Model):
     signing = models.DateField()
     validity_period = models.DurationField()
     price = models.DecimalField(decimal_places=2, max_digits=10)
+
+    def __str__(self):
+        return self.number_document
 
 
 class Equipment(models.Model):
@@ -51,6 +58,9 @@ class Guard(models.Model):
     badge_number = models.CharField(max_length=255)
     contract_phone = models.CharField(max_length=255)
     equipment = models.ManyToManyField(Equipment)
+
+    def __str__(self):
+        return f"{self.username} ({self.first_name} {self.last_name})"
 
     def get_absolute_url(self):
         return reverse("security:guard-detail", kwargs={"pk": self.pk})
