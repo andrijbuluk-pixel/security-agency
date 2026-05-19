@@ -357,6 +357,7 @@
     "model": "security.object",
     "pk": 1,
     "fields": {
+      "name": "Kyiv Central Office",
       "client": 1,
       "address": "Kyiv",
       "type_protection": 1,
@@ -368,6 +369,7 @@
     "model": "security.object",
     "pk": 2,
     "fields": {
+      "name": "Odesa Sea Port Depot",
       "client": 2,
       "address": "Odesa",
       "type_protection": 3,
@@ -379,6 +381,7 @@
     "model": "security.object",
     "pk": 3,
     "fields": {
+      "name": "Kharkiv Logistics Center",
       "client": 3,
       "address": "Kharkiv",
       "type_protection": 2,
@@ -390,6 +393,7 @@
     "model": "security.object",
     "pk": 4,
     "fields": {
+      "name": "Lviv IT Research Hub",
       "client": 4,
       "address": "Lviv",
       "type_protection": 4,
@@ -401,6 +405,7 @@
     "model": "security.object",
     "pk": 5,
     "fields": {
+      "name": "Dnipro Industrial Plant",
       "client": 5,
       "address": "Dnipro",
       "type_protection": 5,
@@ -412,6 +417,7 @@
     "model": "security.object",
     "pk": 6,
     "fields": {
+      "name": "Bunker Facility Alpha",
       "client": 6,
       "address": "Secret Bunker Location, Unknown",
       "type_protection": 1,
