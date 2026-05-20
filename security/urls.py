@@ -3,7 +3,7 @@ from django.urls import path
 from .views import (
     index,
     GuardListView,
-    ClientListView,
+    EventListView,
     GuardCreateView,
     GuardDetailView,
     GuardLicenseUpdateView,
@@ -33,7 +33,7 @@ urlpatterns = [
         name="guard-delete",
     ),
 
-    path("client/", ClientListView.as_view(), name="client-list"),
+    path("event/", EventListView.as_view(), name="event-list"),
 
     path("object/", ObjectListView.as_view(), name="object-list"),
     path("object/contract/", ContractCreate.as_view(), name="contract-list"),

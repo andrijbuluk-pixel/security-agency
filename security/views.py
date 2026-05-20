@@ -10,7 +10,7 @@ from .forms import (
     ContractCreateForm,
     ObjectCreateForm
 )
-from .models import Guard, Client, Object, Contract
+from .models import Guard, Client, Object, Contract, Event
 
 
 def index(request):
@@ -69,8 +69,8 @@ class GuardDeleteView(generic.DeleteView):
     success_url = reverse_lazy("")
 
 
-class ClientListView(generic.ListView):
-    model = Client
+class EventListView(generic.ListView):
+    model = Event
 
 
 class ObjectListView(generic.ListView):
