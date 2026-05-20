@@ -1,3 +1,5 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
@@ -13,6 +15,7 @@ from .forms import (
 from .models import Guard, Client, Object, Contract, Event
 
 
+@login_required
 def index(request):
     num_guard = Guard.objects.count()
     num_client = Client.objects.count()
@@ -48,32 +51,32 @@ class GuardListView(generic.ListView):
         return queryset
 
 
-class GuardCreateView(generic.CreateView):
+class GuardCreateView(LoginRequiredMixin, generic.CreateView):
     model = Guard
     form_class = GuardCreationForm
 
 
-class GuardDetailView(generic.DetailView):
+class GuardDetailView(LoginRequiredMixin, generic.DetailView):
     model = Guard
     queryset = Guard.objects.all().prefetch_related("equipment")
 
 
-class GuardLicenseUpdateView(generic.UpdateView):
+class GuardLicenseUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Guard
     form_class = GuardLicenseUpdateForm
     success_url = reverse_lazy("security:guard-list")
 
 
-class GuardDeleteView(generic.DeleteView):
+class GuardDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Guard
     success_url = reverse_lazy("")
 
 
-class EventListView(generic.ListView):
+class EventListView(LoginRequiredMixin, generic.ListView):
     model = Event
 
 
-class ObjectListView(generic.ListView):
+class ObjectListView(LoginRequiredMixin, generic.ListView):
     model = Object
     context_object_name = "objects_list"
     template_name = "security/object_list.html"
@@ -94,19 +97,23 @@ class ObjectListView(generic.ListView):
         return queryset
 
 
-class ContractCreate(generic.CreateView):
+class ContractCreate(LoginRequiredMixin, generic.CreateView):
     model = Contract
     form_class = ContractCreateForm
     template_name = "security/object_form.html"
     success_url = reverse_lazy("security:new-object-list")
 
 
-class ObjectCreate(generic.CreateView):
+class ObjectCreate(LoginRequiredMixin, generic.CreateView):
     model = Object
     form_class = ObjectCreateForm
     template_name = "security/object_form.html"
     success_url = reverse_lazy("security:object-list")
 
 
-class ObjectDetailView(generic.DetailView):
+class ObjectDetailView(LoginRequiredMixin, generic.DetailView):
     model = Object
+
+
+class ClientListView(LoginRequiredMixin, generic.DetailView):
+    model = Client

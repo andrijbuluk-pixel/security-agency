@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<h1>
+    Username: {{ client.username }}
+	</h1>
+
+	<p><strong>First name:</strong> {{ client.first_name }}</p>
+  <p><strong>Last name:</strong> {{ client.last_name }}</p>
+  <p><strong>Created at:</strong> {{ client.created_at }}</p>
+
+	<div class="ml-3">
+    <h4>Objects</h4>
+
+    {% for obj in client.object_set.all %}
+        <hr>
+        <p><strong>Object name:</strong> {{ obj.name }}</p>
+        <p class="text-muted"><strong>Id:</strong> {{obj.id}}</p>
+
+    {% empty %}
+      <p>No object!</p>
+    {% endfor %}
+  </div>
+
+{% endblock %}
