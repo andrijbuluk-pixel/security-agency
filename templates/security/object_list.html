@@ -28,7 +28,7 @@
 
 			{% for object in object_list %}
 				<tr>
-					<td>{{ object.id }}</td>
+					<td><a href="{% url 'security:object-detail-list' pk=object.id %}">{{ object.id }}</a></td>
 					<td>{{ object.name }}</td>
 					<td>{{ object.address }}</td>
 					<td>{{ object.type_protection.type }}</td>
