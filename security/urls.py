@@ -11,7 +11,8 @@ from .views import (
     ObjectListView,
     ContractCreate,
     ObjectCreate,
-    ObjectDetailView
+    ObjectDetailView,
+    ClientListView
 
 )
 
@@ -39,7 +40,7 @@ urlpatterns = [
     path("object/contract/", ContractCreate.as_view(), name="contract-list"),
     path("object/contract/new-object", ObjectCreate.as_view(), name="new-object-list"),
     path("object/<int:pk>/", ObjectDetailView.as_view(), name="object-detail-list"),
-
+    path("client/<int:pk>/", ClientListView.as_view(), name="client-detail"),
 ]
 
 app_name = "security"

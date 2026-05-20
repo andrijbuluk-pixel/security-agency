@@ -25,6 +25,9 @@ class Client(AbstractUser):
         default=""
     )
 
+    def get_absolute_url(self):
+        return reverse("security:client-detail", kwargs={"pk": self.pk})
+
 
 class ProtectionType(models.Model):
     type = models.TextField()
