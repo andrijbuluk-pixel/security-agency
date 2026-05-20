@@ -25,8 +25,14 @@ class GuardCreationForm(forms.ModelForm):
             "last_name",
             "email",
             "callsign",
-            "contract_phone"
+            "badge_number",
+            "contract_phone",
+            "equipment",
         )
+
+        widgets = {
+            "equipment": forms.CheckboxSelectMultiple,
+        }
 
     def clean_license_number(self):
         return validate_license_number(
@@ -38,7 +44,16 @@ class GuardCreationForm(forms.ModelForm):
 class GuardLicenseUpdateForm(forms.ModelForm):
     class Meta:
         model = Guard
-        fields = ["contract_phone", "callsign", "badge_number"]
+        fields = [
+            "contract_phone",
+            "callsign",
+            "badge_number",
+            "equipment",
+        ]
+
+    widgets = {
+        "equipment": forms.CheckboxSelectMultiple,
+    }
 
     def clean_license_number(self):
         return validate_license_number(
