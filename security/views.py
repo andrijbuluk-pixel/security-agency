@@ -106,3 +106,7 @@ class ObjectCreate(generic.CreateView):
     form_class = ObjectCreateForm
     template_name = "security/object_form.html"
     success_url = reverse_lazy("security:object-list")
+
+
+class ObjectDetailView(generic.DetailView):
+    model = Object
