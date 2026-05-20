@@ -3,5 +3,21 @@
 
 
 {% block content %}
-	<h1>Event</h1>
+	<h1>Operational news feed</h1>
+
+	<br>
+
+	<div class="ml-3">
+		{% for events in event_list %}
+			<hr>
+			<h4>Name object: {{ events.object.name }}</h4>
+			<p><strong>Timestamp:</strong> {{ events.timestamp }}</p>
+			<p><strong>Guard:</strong> {{ events.guard }}</p>
+			<p><strong>object:</strong> {{ events.object }}</p>
+			<p><strong>description:</strong> {{ events.description }}</p>
+		{% empty %}
+			<p>No event!</p>
+		{% endfor %}
+	</div>
+
 {% endblock %}
