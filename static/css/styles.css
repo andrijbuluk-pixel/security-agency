@@ -11,3 +11,14 @@ body {
 .user-select-sidebar {
     user-select: none;
 }
+
+.user-select-index {
+    background-image: url("../img/security-agence-2.png");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 550px;
+    user-select: none;
+}
