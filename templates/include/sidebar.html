@@ -1,26 +1,37 @@
-<ul class="sidebar-nav list-group">
-	{% if user.is_authenticated %}
-		<li class="list-group-item">Username: <a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></li>
-		<li class="list-group-item">
-			<form action="{% url 'logout' %}" method="post">
-				{% csrf_token %}
-				<button type="submit" class="btn btn-link">Logout</button>
-			</form>
+<ul class="sidebar-nav list-group navbar navbar-expand-lg navbar-dark bg-dark">
+		<li class="container">
+			<a class="navbar-brand" href="{% url 'security:index' %}">Security Agence</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+							aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+					class="navbar-toggler-icon"></span></button>
+			<div id="navbarSupportedContent">
+				<ul class="d-flex align-items-center navbar-nav ms-auto mb-2 mb-lg-0">
+
+					{% if user.is_authenticated %}
+						<li class="d-flex align-items-center" > Username:
+							<a class="nav-link"
+								 href="{{ user.get_absolute_url }}">{{ user.get_username }}
+							</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'security:guard-list' %}">Guard</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'security:object-list' %}">Object</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'security:event-list' %}">Event</a></li>
+						<li class="nav-item">
+							<form action="{% url 'logout' %}" method="post">
+								{% csrf_token %}
+								<button type="submit" class="btn-danger">Logout</button>
+							</form>
+						</li>
+
+					{% else %}
+						<li>
+							<form class="nav-link" action="{% url 'login' %}" method="post">
+								{% csrf_token %}
+								<button  class="btn btn-primary" type="{% url 'login' %}?next={{ request.path }}">Login</button>
+							</form>
+						</li>
+					{% endif %}
+				</ul>
+			</div>
 		</li>
-
-	{% else %}
-		<li class="list-group-item">
-			<form action="{% url 'login' %}" method="post">
-				{% csrf_token %}
-				<button type="{% url 'login' %}?next={{ request.path }}">Login</button>
-			</form>
-		</li>
-	{% endif %}
-
-	<br>
-
-	<li class="list-group-item"><a href="{% url 'security:index' %}">Home</a></li>
-	<li class="list-group-item"><a href="{% url 'security:guard-list' %}">Guard</a></li>
-	<li class="list-group-item"><a href="{% url 'security:object-list' %}">Object</a></li>
-	<li class="list-group-item"><a href="{% url 'security:event-list' %}">Event</a></li>
 </ul>
