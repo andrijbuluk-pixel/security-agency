@@ -1,15 +1,28 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block content %}
-
-	<header class="py-5 bg-image-full" style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1600x900')">
-		<div class="text-center my-5">
-			<img class="img-fluid rounded-circle mb-4" src="https://dummyimage.com/150x150/6c757d/dee2e6.jpg" alt="..."/>
-			<h1 class="text-white fs-3 fw-bolder">Full Width Pics</h1>
-			<p class="text-white-50 mb-0">Landing Page Template</p>
+{% block image %}
+	<header class="img-fluid"
+					style="
+							background-image: url('{% static 'img/security-agence-2.png' %}');
+							background-position: center;
+							background-size: cover;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							height: 550px;
+							user-select: none;
+							">
+		<div class="text-center my-5" style="margin: 0 50px">
+			<h1 class="text-black-500 fs-3 fw-bolder" style="color: #20b0d6; ">Security Agence</h1>
+			<p class="text-black-500 mb-0" style="color: #11bae8">Comprehensive protection services, real-time monitoring, <br/>
+				and expert consultancy for corporate and private security.</p>
 		</div>
 	</header>
+{% endblock %}
 
+
+{% block content %}
 
 	<h1>Security Agency</h1>
 	<p>Welcome to Best Security Agency!</p>
