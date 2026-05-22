@@ -69,7 +69,7 @@ class GuardLicenseUpdateView(LoginRequiredMixin, generic.UpdateView):
 
 class GuardDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Guard
-    success_url = reverse_lazy("")
+    success_url = reverse_lazy("security:guard-list")
 
 
 class EventListView(LoginRequiredMixin, generic.ListView):
