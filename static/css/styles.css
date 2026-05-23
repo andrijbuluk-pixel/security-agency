@@ -13,12 +13,12 @@ body {
 }
 
 .user-select-index {
-    background-image: url("../img/security-agence-2.png");
+    background-image: url("../img/security-agence-8.png");
     background-position: center;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 550px;
+    height: 680px;
     user-select: none;
 }
