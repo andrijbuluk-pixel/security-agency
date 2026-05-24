@@ -1,7 +1,5 @@
 from django import template
 
-from security.models import Guard
-
 register = template.Library()
 
 

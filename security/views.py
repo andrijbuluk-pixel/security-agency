@@ -39,7 +39,11 @@ class GuardListView(generic.ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(GuardListView, self).get_context_data(**kwargs)
 
-        context["search_form"] = GuardUsernameSearchForm()
+        username = self.request.GET.get("username", "")
+
+        context["search_form"] = GuardUsernameSearchForm(
+            initial={"username": username}
+        )
         return context
 
     def get_queryset(self):
@@ -83,9 +87,13 @@ class ObjectListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 5
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        context = super(ObjectListView, self).get_context_data()
+        context = super(ObjectListView, self).get_context_data(**kwargs)
 
-        context["search_form"] = ObjectNameSearchForm()
+        name = self.request.GET.get("name", "")
+
+        context["search_form"] = ObjectNameSearchForm(
+            initial={"name": name}
+        )
         return context
 
     def get_queryset(self):
