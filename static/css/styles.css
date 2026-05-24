@@ -22,3 +22,7 @@ body {
     height: 680px;
     user-select: none;
 }
+
+.center {
+    align-items: center;
+}
