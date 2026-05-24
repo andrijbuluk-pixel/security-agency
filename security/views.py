@@ -10,7 +10,8 @@ from .forms import (
     GuardLicenseUpdateForm,
     ObjectNameSearchForm,
     ContractCreateForm,
-    ObjectCreateForm
+    ObjectCreateForm,
+    EventCreateForm
 )
 from .models import Guard, Client, Object, Contract, Event
 
@@ -80,6 +81,13 @@ class EventListView(LoginRequiredMixin, generic.ListView):
     model = Event
 
 
+class EventCreate(LoginRequiredMixin, generic.CreateView):
+    model = Event
+    form_class = EventCreateForm
+    template_name = "security/event_form.html"
+    success_url = reverse_lazy("security:event-list")
+
+
 class ObjectListView(LoginRequiredMixin, generic.ListView):
     model = Object
     context_object_name = "objects_list"
@@ -128,6 +136,7 @@ class ObjectUpdateView(LoginRequiredMixin, generic.UpdateView):
 class ObjectDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Object
     success_url = reverse_lazy("security:object-list")
+
 
 class ObjectDetailView(LoginRequiredMixin, generic.DetailView):
     model = Object

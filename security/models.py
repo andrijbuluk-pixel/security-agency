@@ -86,3 +86,6 @@ class Event(models.Model):
     description = models.TextField()
     guard = models.ForeignKey(Guard, on_delete=models.CASCADE)
     object = models.ForeignKey(Object, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ["-timestamp"]
