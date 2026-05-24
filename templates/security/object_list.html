@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+
+
+{% block content %}
+	<h1 class="center">
+		Object List
+		<a href="{% url 'security:contract-list' %}" class="btn btn-primary link-to-page">
+			Create
+		</a>
+	</h1>
+
+	<form method="get" action="" class="form-inline center">
+		{{ search_form|crispy }}
+		<input value="🔎" type="submit" class="btn btn-secondary">
+	</form>
+
+	{% if object_list %}
+		<table class="table">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>address</th>
+				<th>type_protection</th>
+				<th>Update</th>
+				<th>Delete</th>
+			</tr>
+
+			{% for object in object_list %}
+				<tr>
+					<td><a href="{% url 'security:object-detail-list' pk=object.id %}">{{ object.id }}</a></td>
+					<td>{{ object.name }}</td>
+					<td>{{ object.address }}</td>
+					<td>{{ object.type_protection.type }}</td>
+					<td>
+						<a href="{% url 'security:object-update-list' pk=object.id %}">Update</a>
+					</td>
+					<td>
+						<a class="red" href="{% url 'security:object-delete-list' pk=object.id %}">Delete</a>
+					</td>
+				</tr>
+			{% endfor %}
+
+		</table>
+	{% else %}
+		<p>There are no Object in the service.</p>
+	{% endif %}
+{% endblock %}

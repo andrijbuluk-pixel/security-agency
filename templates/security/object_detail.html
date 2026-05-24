@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>
+		Detail Object: {{ object.name }}
+	</h1>
+
+	<br>
+
+	<h3>Username Client: {{ object.client }}</h3>
+	<p><strong>Contract:</strong> {{ object.contract.number_document }}</p>
+	<p><strong>Signing:</strong> {{ object.contract.signing }}</p>
+	<p><strong>Validity period:</strong> {{ object.contract.validity_period }}</p>
+	<p><strong>Price:</strong> {{ object.contract.price }}</p>
+
+	<br>
+
+	<p><strong>Address:</strong> {{ object.address }}</p>
+	<p><strong>Type_protection:</strong> {{ object.type_protection }}</p>
+
+	<div class="ml-3">
+		<h4>Guard</h4>
+
+		{% for guard in object.guardian.all %}
+			<hr>
+			<p class="text-muted"><strong>Id:</strong> {{ guard.id }}</p>
+			<p><strong>Username:</strong> {{ guard.username }}</p>
+			<p><strong>Callsign:</strong> {{ guard.callsign }}</p>
+			<p><strong>Email:</strong> {{ guard.email }}</p>
+			<p><strong>Badge number:</strong> {{ guard.badge_number }}</p>
+			<p><strong>Contract_phone:</strong> {{ guard.contract_phone }}</p>
+
+		{% empty %}
+			<p>No Guards!</p>
+		{% endfor %}
+	</div>
+
+{% endblock %}
