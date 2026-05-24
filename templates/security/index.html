@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block image %}
+	<header class="img-fluid user-select-index">
+		<div class="text-center my-5" style="margin: 0 50px">
+			<h1 class="text-black-500 fs-3 fw-bolder" style="color: #0e1a43; ">Security Agence</h1>
+			<p class="text-black-500 mb-0" style="color: #10225a">Comprehensive protection services, real-time monitoring,
+				<br/>
+				and expert consultancy for corporate and private security.</p>
+		</div>
+	</header>
+{% endblock %}
+
+
+{% block content %}
+
+	<div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
+
+		<section class="pt-3 pb-4" id="count-stats">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-9 mx-auto py-3">
+						<div class="row">
+							<div class="col-md-4 position-relative">
+								<div class="p-3 text-center">
+									<h1 class="text-gradient text-dark"><span id="state1" countTo="70">{{ num_guard }}</span>+</h1>
+									<h5 class="mt-3">Guard👮</h5>
+									<p class="text-sm font-weight-normal">A constantly growing professional security team.</p>
+								</div>
+								<hr class="vertical dark">
+							</div>
+							<div class="col-md-4 position-relative">
+								<div class="p-3 text-center">
+									<h1 class="text-gradient text-dark"><span id="state2" countTo="15">{{ num_client }}</span>+</h1>
+									<h5 class="mt-3">Client👤</h5>
+									<p class="text-sm font-weight-normal">The trust of companies and individuals who have chosen our
+										security.</p>
+								</div>
+								<hr class="vertical dark">
+							</div>
+							<div class="col-md-4 position-relative">
+								<div class="p-3 text-center">
+									<h1 class="text-gradient text-dark" id="state3" countTo="4">{{ num_visits }}</h1>
+									<h5 class="mt-3">Num visits👋🏻</h5>
+									<p class="text-sm font-weight-normal">An active community interested in professional defense.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+{% endblock %}
+
+{% block footer %}
+	<footer class="py-5 bg-dark">
+		<div class="container"><p class="m-0 text-center text-white">Copyright &copy; Security Agence 2023</p></div>
+	</footer>
+{% endblock %}

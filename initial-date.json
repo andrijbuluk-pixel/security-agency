@@ -1,0 +1,428 @@
+[
+  {
+    "model": "security.protectiontype",
+    "pk": 1,
+    "fields": {
+      "type": "Physical security"
+    }
+  },
+  {
+    "model": "security.protectiontype",
+    "pk": 2,
+    "fields": {
+      "type": "Protection of objects"
+    }
+  },
+  {
+    "model": "security.protectiontype",
+    "pk": 3,
+    "fields": {
+      "type": "Cargo protection and escort"
+    }
+  },
+  {
+    "model": "security.protectiontype",
+    "pk": 4,
+    "fields": {
+      "type": "Remote control"
+    }
+  },
+  {
+    "model": "security.protectiontype",
+    "pk": 5,
+    "fields": {
+      "type": "Technical security"
+    }
+  },
+
+  {
+    "model": "security.guard",
+    "pk": 1,
+    "fields": {
+      "username": "Garnish",
+      "first_name": "Alexander",
+      "last_name": "Kovalchuk",
+      "email": "kovalchuk.sec@agency.com",
+      "callsign": "GRANITE",
+      "badge_number": "UA-SEC-001",
+      "contract_phone": "+3805001112233",
+      "equipment": [6, 4, 2, 1, 3, 5]
+    }
+  },
+  {
+    "model": "security.guard",
+    "pk": 2,
+    "fields": {
+      "username": "Spray",
+      "first_name": "Dmitry",
+      "last_name": "Marchenko",
+      "email": "d.marchenko@agency.com",
+      "callsign": "HACKER",
+      "badge_number": "UA-SEC-012",
+      "contract_phone": "+3806744405566",
+      "equipment": [6, 4, 2, 1, 3, 5]
+    }
+  },
+  {
+    "model": "security.guard",
+    "pk": 3,
+    "fields": {
+      "username": "Chic",
+      "first_name": "Artem",
+      "last_name": "Belov",
+      "email": "belov.fast@agency.com",
+      "callsign": "METEOR",
+      "badge_number": "UA-SEC-007",
+      "contract_phone": "+3809377788099",
+      "equipment": [6, 4, 2, 1, 3, 5]
+    }
+  },
+  {
+    "model": "security.guard",
+    "pk": 4,
+    "fields": {
+      "username": "Wile",
+      "first_name": "Olena",
+      "last_name": "Savchenko",
+      "email": "o.savchenko@agency.com",
+      "callsign": "OWL",
+      "badge_number": "UA-SEC-015",
+      "contract_phone": "+3806310110022",
+      "equipment": [6, 4, 2, 1, 3, 5]
+    }
+  },
+  {
+    "model": "security.guard",
+    "pk": 5,
+    "fields": {
+      "username": "Alpha",
+      "first_name": "Maxim",
+      "last_name": "Zaliznyak",
+      "email": "iron.max@agency.com",
+      "callsign": "SHOCK",
+      "badge_number": "UA-SEC-003",
+      "contract_phone": "+3809588083311",
+      "equipment": [6, 4, 2, 1]
+    }
+  },
+  {
+    "model": "security.guard",
+    "pk": 6,
+    "fields": {
+      "username": "Beta",
+      "first_name": "Ihor",
+      "last_name": "Doroshenko",
+      "email": "doroshenko.control@agency.com",
+      "callsign": "CENTER",
+      "badge_number": "UA-SEC-020",
+      "contract_phone": "+3806822209944",
+      "equipment": [6, 4, 2, 1, 3, 5]
+    }
+  },
+  {
+    "model": "security.equipment",
+    "pk": 1,
+    "fields": {
+      "name": "Radio Unit Type-A",
+      "serial_number": "RDO-99221-X",
+      "inventory_number": "INV-001"
+    }
+  },
+  {
+    "model": "security.equipment",
+    "pk": 2,
+    "fields": {
+      "name": "Tactical Light LED",
+      "serial_number": "FLSH-44212-L",
+      "inventory_number": "INV-002"
+    }
+  },
+  {
+    "model": "security.equipment",
+    "pk": 3,
+    "fields": {
+      "name": "Protective Vest Class-3",
+      "serial_number": "VEST-77288-B",
+      "inventory_number": "INV-003"
+    }
+  },
+  {
+    "model": "security.equipment",
+    "pk": 4,
+    "fields": {
+      "name": "Standard E-Shocker",
+      "serial_number": "SHK-11222-Z1",
+      "inventory_number": "INV-004"
+    }
+  },
+  {
+    "model": "security.equipment",
+    "pk": 5,
+    "fields": {
+      "name": "NV-Goggles Basic",
+      "serial_number": "NVG-55636-N",
+      "inventory_number": "INV-005"
+    }
+  },
+  {
+    "model": "security.equipment",
+    "pk": 6,
+    "fields": {
+      "name": "Rugged Phone Agency-Edition",
+      "serial_number": "PHN-33444-M",
+      "inventory_number": "INV-006"
+    }
+  },
+  {
+    "model": "security.client",
+    "pk": 1,
+    "fields": {
+      "username": "Shadow_Architect",
+      "email": "arch.contact@private.io",
+      "password": "pbkdf2_sha256$260000$random_hash_1_xyz",
+      "created_at": "2024-01-15 10:30:00"
+    }
+  },
+  {
+    "model": "security.client",
+    "pk": 2,
+    "fields": {
+      "username": "Phoenix_Rising",
+      "email": "p.rising@web-mail.net",
+      "password": "pbkdf2_sha256$260000$random_hash_2_abc",
+      "created_at": "2024-05-20 14:45:12"
+    }
+  },
+  {
+    "model": "security.client",
+    "pk": 3,
+    "fields": {
+      "username": "Silver_Shield",
+      "email": "s.shield@secure-line.com",
+      "password": "pbkdf2_sha256$260000$random_hash_3_def",
+      "created_at": "2025-08-10 09:00:05"
+    }
+  },
+  {
+    "model": "security.client",
+    "pk": 4,
+    "fields": {
+      "username": "Deep_Blue_Ocean",
+      "email": "blue.ocean@deep-sea.com",
+      "password": "pbkdf2_sha256$260000$random_hash_4_ghi",
+      "created_at": "2025-11-25 21:15:00"
+    }
+  },
+  {
+    "model": "security.client",
+    "pk": 5,
+    "fields": {
+      "username": "Neon_City_Admin",
+      "email": "city.admin@neon-net.org",
+      "password": "pbkdf2_sha256$260000$random_hash_5_jkl",
+      "created_at": "2026-02-01 12:00:00"
+    }
+  },
+  {
+    "model": "security.client",
+    "pk": 6,
+    "fields": {
+      "username": "Night_Watcher",
+      "email": "watcher@night-ops.com",
+      "password": "pbkdf2_sha256$260000$random_hash_6_mno",
+      "created_at": "2026-05-14 18:30:45"
+    }
+  },
+  {
+    "model": "security.event",
+    "pk": 1,
+    "fields": {
+      "timestamp": "2026-05-10T08:00:00Z",
+      "description": "Patrolled the perimeter of the Warehouse Alpha. All fences are intact, gates are locked. No issues.",
+      "guard": 1,
+      "object": 1
+    }
+  },
+  {
+    "model": "security.event",
+    "pk": 2,
+    "fields": {
+      "timestamp": "2026-05-11T02:15:30Z",
+      "description": "Motion sensor triggered at the rear door of the Private Villa. Checked the area - it was just a stray cat. System reset.",
+      "guard": 4,
+      "object": 2
+    }
+  },
+  {
+    "model": "security.event",
+    "pk": 3,
+    "fields": {
+      "timestamp": "2026-05-12T19:00:00Z",
+      "description": "Shift change at the Law Office. Handed over all keys and equipment to Ihor. Everything is in order.",
+      "guard": 5,
+      "object": 3
+    }
+  },
+  {
+    "model": "security.event",
+    "pk": 4,
+    "fields": {
+      "timestamp": "2026-05-13T11:20:00Z",
+      "description": "Technicians arrived at the Antique Gallery to update the alarm software. Supervised their work until completion.",
+      "guard": 2,
+      "object": 4
+    }
+  },
+  {
+    "model": "security.event",
+    "pk": 5,
+    "fields": {
+      "timestamp": "2026-05-14T23:45:10Z",
+      "description": "A suspicious black van was idling near the IT Data Center. I approached to ask for ID, and they drove off immediately.",
+      "guard": 1,
+      "object": 5
+    }
+  },
+  {
+    "model": "security.event",
+    "pk": 6,
+    "fields": {
+      "timestamp": "2026-05-15T09:10:00Z",
+      "description": "Client Night_Watcher arrived at the Secret Bunker. Verified identity and granted access. Client left after 20 minutes.",
+      "guard": 3,
+      "object": 6
+    }
+  },
+  {
+    "model": "security.contract",
+    "pk": 1,
+    "fields": {
+      "number_document": "CNT-2024-001",
+      "signing": "2024-01-10",
+      "validity_period": "365 00:00:00",
+      "price": "50000.00"
+    }
+  },
+  {
+    "model": "security.contract",
+    "pk": 2,
+    "fields": {
+      "number_document": "CNT-2024-055",
+      "signing": "2024-05-15",
+      "validity_period": "730 00:00:00",
+      "price": "120000.00"
+    }
+  },
+  {
+    "model": "security.contract",
+    "pk": 3,
+    "fields": {
+      "number_document": "CNT-2025-010",
+      "signing": "2025-02-01",
+      "validity_period": "180 00:00:00",
+      "price": "25500.50"
+    }
+  },
+  {
+    "model": "security.contract",
+    "pk": 4,
+    "fields": {
+      "number_document": "CNT-2026-001",
+      "signing": "2026-01-05",
+      "validity_period": "365 00:00:00",
+      "price": "45000.00"
+    }
+  },
+  {
+    "model": "security.contract",
+    "pk": 5,
+    "fields": {
+      "number_document": "CNT-2026-005",
+      "signing": "2026-03-12",
+      "validity_period": "180 00:00:00",
+      "price": "90000.00"
+    }
+  },
+  {
+    "model": "security.contract",
+    "pk": 6,
+    "fields": {
+      "number_document": "CNT-2026-009",
+      "signing": "2026-05-01",
+      "validity_period": "30 00:00:00",
+      "price": "15000.00"
+    }
+  },
+  {
+    "model": "security.object",
+    "pk": 1,
+    "fields": {
+      "name": "Kyiv Central Office",
+      "client": 1,
+      "address": "Kyiv",
+      "type_protection": 1,
+      "guardian": [1, 3],
+      "contract": 1
+    }
+  },
+  {
+    "model": "security.object",
+    "pk": 2,
+    "fields": {
+      "name": "Odesa Sea Port Depot",
+      "client": 2,
+      "address": "Odesa",
+      "type_protection": 3,
+      "guardian": [4],
+      "contract": 2
+    }
+  },
+  {
+    "model": "security.object",
+    "pk": 3,
+    "fields": {
+      "name": "Kharkiv Logistics Center",
+      "client": 3,
+      "address": "Kharkiv",
+      "type_protection": 2,
+      "guardian": [5],
+      "contract": 3
+    }
+  },
+  {
+    "model": "security.object",
+    "pk": 4,
+    "fields": {
+      "name": "Lviv IT Research Hub",
+      "client": 4,
+      "address": "Lviv",
+      "type_protection": 4,
+      "guardian": [2],
+      "contract": 4
+    }
+  },
+  {
+    "model": "security.object",
+    "pk": 5,
+    "fields": {
+      "name": "Dnipro Industrial Plant",
+      "client": 5,
+      "address": "Dnipro",
+      "type_protection": 5,
+      "guardian": [1, 2],
+      "contract": 5
+    }
+  },
+  {
+    "model": "security.object",
+    "pk": 6,
+    "fields": {
+      "name": "Bunker Facility Alpha",
+      "client": 6,
+      "address": "Secret Bunker Location, Unknown",
+      "type_protection": 1,
+      "guardian": [2, 5, 1],
+      "contract": 6
+    }
+  }
+]

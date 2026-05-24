@@ -1,0 +1,34 @@
+body {
+    margin-top: 1px;
+}
+
+.link-to-page {
+    float: right;
+    margin: 0 2px 0 2px;
+}
+
+
+.user-select-sidebar {
+    user-select: none;
+}
+
+.user-select-index {
+    background-image: url("../img/security-agence-8.png");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 680px;
+    user-select: none;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.red {
+    color: red;
+}
