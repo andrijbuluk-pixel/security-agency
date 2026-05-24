@@ -3,7 +3,11 @@
 
 
 {% block content %}
-	<h1 class="center">Operational news feed</h1>
+	<h1 class="center">Operational news feed
+		<a href="{% url 'security:event-create' %}" class="btn btn-primary link-to-page">
+			Create new Event
+		</a>
+	</h1>
 
 	<br>
 

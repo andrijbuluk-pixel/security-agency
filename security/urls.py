@@ -14,7 +14,7 @@ from .views import (
     ObjectDetailView,
     ClientListView,
     ObjectUpdateView,
-    ObjectDeleteView,
+    ObjectDeleteView, EventCreate,
 
 )
 
@@ -37,7 +37,7 @@ urlpatterns = [
     ),
 
     path("event/", EventListView.as_view(), name="event-list"),
-
+    path("event/created/", EventCreate.as_view(), name="event-create"),
     path("object/", ObjectListView.as_view(), name="object-list"),
     path("object/contract/", ContractCreate.as_view(), name="contract-list"),
     path("object/contract/new-object", ObjectCreate.as_view(), name="new-object-list"),
