@@ -3,16 +3,16 @@
 
 
 {% block content %}
-	<h1>
+	<h1 class="center">
 		Guard List
 		<a href="{% url 'security:guard-created' %}" class="btn btn-primary link-to-page">
 			Create
 		</a>
 	</h1>
 
-	<form method="get" action="" class="form-inline">
+	<form method="get" action="" class="form-inline center">
 		{{ search_form|crispy }}
-		<input type="submit" class="btn btn-secondary">
+		<input value="🔎" type="submit" class="btn btn-secondary">
 	</form>
 
 	{% if guard_list %}
