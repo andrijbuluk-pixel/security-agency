@@ -32,8 +32,12 @@
 					<td>{{ object.name }}</td>
 					<td>{{ object.address }}</td>
 					<td>{{ object.type_protection.type }}</td>
-					<td>Update</td>
-					<td>Delete</td>
+					<td>
+						<a href="{% url 'security:object-update-list' pk=object.id %}">Update</a>
+					</td>
+					<td>
+						<a class="red" href="{% url 'security:object-delete-list' pk=object.id %}">Delete</a>
+					</td>
 				</tr>
 			{% endfor %}
 

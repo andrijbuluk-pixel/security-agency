@@ -119,6 +119,16 @@ class ObjectCreate(LoginRequiredMixin, generic.CreateView):
     success_url = reverse_lazy("security:object-list")
 
 
+class ObjectUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Object
+    fields = "__all__"
+    success_url = reverse_lazy("security:object-list")
+
+
+class ObjectDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Object
+    success_url = reverse_lazy("security:object-list")
+
 class ObjectDetailView(LoginRequiredMixin, generic.DetailView):
     model = Object
 
