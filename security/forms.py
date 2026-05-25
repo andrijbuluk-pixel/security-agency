@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 
-from security.models import Guard, Object, Contract, ProtectionType, Event
+from security.models import Guard, Object, Contract, Event, Client
 
 
 class GuardForm(forms.ModelForm):
@@ -119,6 +119,27 @@ class EventCreateForm(forms.ModelForm):
                 attrs={"type": "datetime-local", "class": "form-control"},
                 format="%Y-%m-%dT%H:%M"
             ),
+        }
+
+
+class ClientCreateForm(forms.ModelForm):
+    class Meta:
+        model = Client
+        fields = [
+            "username",
+            "first_name",
+            "last_name",
+            "email",
+            "password",
+        ]
+
+        widgets = {
+            "username": forms.TextInput(),
+            "last_name": forms.TextInput(),
+            "first_name": forms.TextInput(),
+            "email": forms.EmailInput(),
+            "password1": forms.PasswordInput(),
+            "password2": forms.PasswordInput(),
         }
 
 
