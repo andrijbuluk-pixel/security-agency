@@ -13,6 +13,7 @@ from .forms import (
     ObjectCreateForm,
     EventCreateForm,
     ClientCreateForm,
+    ClientNameSearchForm,
 )
 from .models import Guard, Client, Object, Contract, Event
 
@@ -153,6 +154,24 @@ class ClientDetailView(LoginRequiredMixin, generic.DetailView):
 class ClientListView(LoginRequiredMixin, generic.ListView):
     model = Client
     paginate_by = 5
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(ClientListView, self).get_context_data(**kwargs)
+
+        username = self.request.GET.get("username", "")
+
+        context["search_form"] = ClientNameSearchForm(
+            initial={"username": username}
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = Client.objects.all()
+        username = self.request.GET.get("username", "")
+
+        if username:
+            return queryset.filter(username__icontains=username)
+        return queryset
 
 
 class ClientCreate(LoginRequiredMixin, generic.CreateView):

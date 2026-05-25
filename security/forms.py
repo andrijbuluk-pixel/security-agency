@@ -77,7 +77,9 @@ class ContractCreateForm(forms.ModelForm):
 
         widgets = {
             "signing": forms.DateInput(attrs={"type": "date"}),
-            "validity_period": forms.NumberInput(attrs={"placeholder": "Number of days"}),
+            "validity_period": forms.NumberInput(
+                attrs={"placeholder": "Number of days"}
+            ),
         }
 
 
@@ -171,6 +173,19 @@ class GuardUsernameSearchForm(forms.Form):
 
 class ObjectNameSearchForm(forms.Form):
     name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Enter your username",
+            }
+        )
+    )
+
+
+class ClientNameSearchForm(forms.Form):
+    username = forms.CharField(
         max_length=255,
         required=False,
         label="",
