@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1 class="center">List Username Client
+		<a class="btn btn-primary" href="{% url 'security:client-create' %}">Client Created</a>
+	</h1>
+
+	<div class="ml-5">
+		{% for client in client_list %}
+			<hr>
+			<h5>Username: {{ client.username }}</h5>
+			<a href="{% url 'security:client-detail' pk=client.id %}">Client detail</a>
+		{% endfor %}
+	</div>
+
+{% endblock %}
