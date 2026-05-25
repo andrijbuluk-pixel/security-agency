@@ -18,6 +18,7 @@ from .views import (
     ObjectDeleteView,
     EventCreate,
     ClientCreate,
+    ClientDeleteView,
 
 )
 
@@ -51,7 +52,7 @@ urlpatterns = [
     path("client/", ClientListView.as_view(), name="client-list"),
     path("client/created/", ClientCreate.as_view(), name="client-create"),
     path("client/<int:pk>/", ClientDetailView.as_view(), name="client-detail"),
-
+    path("client/<int:pk>/delete/", ClientDeleteView.as_view(), name="client-delete"),
 ]
 
 app_name = "security"

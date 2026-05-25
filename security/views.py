@@ -160,3 +160,8 @@ class ClientCreate(LoginRequiredMixin, generic.CreateView):
     form_class = ClientCreateForm
     template_name = "security/client_form.html"
     success_url = reverse_lazy("security:client-list")
+
+
+class ClientDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Client
+    success_url = reverse_lazy("security:client-list")
