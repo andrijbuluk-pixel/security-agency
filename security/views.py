@@ -79,6 +79,7 @@ class GuardDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class EventListView(LoginRequiredMixin, generic.ListView):
     model = Event
+    paginate_by = 10
 
 
 class EventCreate(LoginRequiredMixin, generic.CreateView):
