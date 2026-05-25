@@ -180,3 +180,16 @@ class ObjectNameSearchForm(forms.Form):
             }
         )
     )
+
+
+class ClientNameSearchForm(forms.Form):
+    username = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Enter your username",
+            }
+        )
+    )
