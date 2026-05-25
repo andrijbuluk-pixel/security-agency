@@ -77,7 +77,9 @@ class ContractCreateForm(forms.ModelForm):
 
         widgets = {
             "signing": forms.DateInput(attrs={"type": "date"}),
-            "validity_period": forms.NumberInput(attrs={"placeholder": "Number of days"}),
+            "validity_period": forms.NumberInput(
+                attrs={"placeholder": "Number of days"}
+            ),
         }
 
 
