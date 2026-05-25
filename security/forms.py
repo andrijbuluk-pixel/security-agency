@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 
-from security.models import Guard, Object, Contract, ProtectionType, Event
+from security.models import Guard, Object, Contract, Event, Client
 
 
 class GuardForm(forms.ModelForm):
@@ -77,7 +77,9 @@ class ContractCreateForm(forms.ModelForm):
 
         widgets = {
             "signing": forms.DateInput(attrs={"type": "date"}),
-            "validity_period": forms.NumberInput(attrs={"placeholder": "Number of days"}),
+            "validity_period": forms.NumberInput(
+                attrs={"placeholder": "Number of days"}
+            ),
         }
 
 
@@ -122,6 +124,27 @@ class EventCreateForm(forms.ModelForm):
         }
 
 
+class ClientCreateForm(forms.ModelForm):
+    class Meta:
+        model = Client
+        fields = [
+            "username",
+            "first_name",
+            "last_name",
+            "email",
+            "password",
+        ]
+
+        widgets = {
+            "username": forms.TextInput(),
+            "last_name": forms.TextInput(),
+            "first_name": forms.TextInput(),
+            "email": forms.EmailInput(),
+            "password1": forms.PasswordInput(),
+            "password2": forms.PasswordInput(),
+        }
+
+
 def validate_license_number(
         license_number,
 ):
@@ -150,6 +173,19 @@ class GuardUsernameSearchForm(forms.Form):
 
 class ObjectNameSearchForm(forms.Form):
     name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Enter your username",
+            }
+        )
+    )
+
+
+class ClientNameSearchForm(forms.Form):
+    username = forms.CharField(
         max_length=255,
         required=False,
         label="",

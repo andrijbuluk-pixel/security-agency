@@ -11,7 +11,9 @@ from .forms import (
     ObjectNameSearchForm,
     ContractCreateForm,
     ObjectCreateForm,
-    EventCreateForm
+    EventCreateForm,
+    ClientCreateForm,
+    ClientNameSearchForm,
 )
 from .models import Guard, Client, Object, Contract, Event
 
@@ -79,6 +81,7 @@ class GuardDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class EventListView(LoginRequiredMixin, generic.ListView):
     model = Event
+    paginate_by = 10
 
 
 class EventCreate(LoginRequiredMixin, generic.CreateView):
@@ -142,5 +145,42 @@ class ObjectDetailView(LoginRequiredMixin, generic.DetailView):
     model = Object
 
 
-class ClientListView(LoginRequiredMixin, generic.DetailView):
+class ClientDetailView(LoginRequiredMixin, generic.DetailView):
     model = Client
+    form_class = ClientCreateForm
+    success_url = reverse_lazy("security:client-detail")
+
+
+class ClientListView(LoginRequiredMixin, generic.ListView):
+    model = Client
+    paginate_by = 5
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(ClientListView, self).get_context_data(**kwargs)
+
+        username = self.request.GET.get("username", "")
+
+        context["search_form"] = ClientNameSearchForm(
+            initial={"username": username}
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = Client.objects.all()
+        username = self.request.GET.get("username", "")
+
+        if username:
+            return queryset.filter(username__icontains=username)
+        return queryset
+
+
+class ClientCreate(LoginRequiredMixin, generic.CreateView):
+    model = Client
+    form_class = ClientCreateForm
+    template_name = "security/client_form.html"
+    success_url = reverse_lazy("security:client-list")
+
+
+class ClientDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Client
+    success_url = reverse_lazy("security:client-list")

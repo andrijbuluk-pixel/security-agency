@@ -12,9 +12,13 @@ from .views import (
     ContractCreate,
     ObjectCreate,
     ObjectDetailView,
+    ClientDetailView,
     ClientListView,
     ObjectUpdateView,
-    ObjectDeleteView, EventCreate,
+    ObjectDeleteView,
+    EventCreate,
+    ClientCreate,
+    ClientDeleteView,
 
 )
 
@@ -40,12 +44,30 @@ urlpatterns = [
     path("event/created/", EventCreate.as_view(), name="event-create"),
     path("object/", ObjectListView.as_view(), name="object-list"),
     path("object/contract/", ContractCreate.as_view(), name="contract-list"),
-    path("object/contract/new-object", ObjectCreate.as_view(), name="new-object-list"),
-    path("object/<int:pk>/", ObjectDetailView.as_view(), name="object-detail-list"),
-    path("object/<int:pk>/update", ObjectUpdateView.as_view(), name="object-update-list"),
-    path("object/<int:pk>/delete", ObjectDeleteView.as_view(), name="object-delete-list"),
+    path("object/contract/new-object",
+         ObjectCreate.as_view(),
+         name="new-object-list"
+         ),
+    path("object/<int:pk>/",
+         ObjectDetailView.as_view(),
+         name="object-detail-list"
+         ),
+    path("object/<int:pk>/update",
+         ObjectUpdateView.as_view(),
+         name="object-update-list"
+         ),
+    path("object/<int:pk>/delete",
+         ObjectDeleteView.as_view(),
+         name="object-delete-list"
+         ),
 
-    path("client/<int:pk>/", ClientListView.as_view(), name="client-detail"),
+    path("client/", ClientListView.as_view(), name="client-list"),
+    path("client/created/", ClientCreate.as_view(), name="client-create"),
+    path("client/<int:pk>/", ClientDetailView.as_view(), name="client-detail"),
+    path("client/<int:pk>/delete/",
+         ClientDeleteView.as_view(),
+         name="client-delete"
+         ),
 ]
 
 app_name = "security"
