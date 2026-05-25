@@ -13,8 +13,11 @@ from .views import (
     ObjectCreate,
     ObjectDetailView,
     ClientDetailView,
+    ClientListView,
     ObjectUpdateView,
-    ObjectDeleteView, EventCreate,
+    ObjectDeleteView,
+    EventCreate,
+    ClientCreate,
 
 )
 
@@ -45,7 +48,10 @@ urlpatterns = [
     path("object/<int:pk>/update", ObjectUpdateView.as_view(), name="object-update-list"),
     path("object/<int:pk>/delete", ObjectDeleteView.as_view(), name="object-delete-list"),
 
+    path("client/", ClientListView.as_view(), name="client-list"),
+    path("client/created/", ClientCreate.as_view(), name="client-create"),
     path("client/<int:pk>/", ClientDetailView.as_view(), name="client-detail"),
+
 ]
 
 app_name = "security"

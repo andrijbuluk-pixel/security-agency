@@ -11,7 +11,8 @@ from .forms import (
     ObjectNameSearchForm,
     ContractCreateForm,
     ObjectCreateForm,
-    EventCreateForm
+    EventCreateForm,
+    ClientCreateForm,
 )
 from .models import Guard, Client, Object, Contract, Event
 
@@ -145,3 +146,17 @@ class ObjectDetailView(LoginRequiredMixin, generic.DetailView):
 
 class ClientDetailView(LoginRequiredMixin, generic.DetailView):
     model = Client
+    form_class = ClientCreateForm
+    success_url = reverse_lazy("security:client-detail")
+
+
+class ClientListView(LoginRequiredMixin, generic.ListView):
+    model = Client
+    paginate_by = 5
+
+
+class ClientCreate(LoginRequiredMixin, generic.CreateView):
+    model = Client
+    form_class = ClientCreateForm
+    template_name = "security/client_form.html"
+    success_url = reverse_lazy("security:client-list")
