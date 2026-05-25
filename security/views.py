@@ -143,5 +143,5 @@ class ObjectDetailView(LoginRequiredMixin, generic.DetailView):
     model = Object
 
 
-class ClientListView(LoginRequiredMixin, generic.DetailView):
+class ClientDetailView(LoginRequiredMixin, generic.DetailView):
     model = Client
