@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from .forms import (
+from security.forms import (
     GuardUsernameSearchForm,
     GuardCreationForm,
     GuardLicenseUpdateForm,
@@ -15,7 +15,7 @@ from .forms import (
     ClientCreateForm,
     ClientNameSearchForm,
 )
-from .models import Guard, Client, Object, Contract, Event
+from security.models import Guard, Client, Object, Contract, Event
 
 
 @login_required
