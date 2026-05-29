@@ -94,3 +94,4 @@ The system is based on the following entities:
 # Logout
 <img width="1919" height="915" alt="Знімок екрана 2026-05-25 210610" src="https://github.com/user-attachments/assets/b4c5750c-43ae-47fe-8adc-ad493ee80457" />
 
+Link to the deployed project -> https://security-agency-7puw.onrender.com
