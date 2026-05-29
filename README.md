@@ -1,6 +1,6 @@
 # Security Agency Project
 
-
+# Test User: Username - user, Password - user12345
 
 
 ### 1. Preparation of the database
