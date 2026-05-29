@@ -180,6 +180,15 @@ class ClientCreate(LoginRequiredMixin, generic.CreateView):
     template_name = "security/client_form.html"
     success_url = reverse_lazy("security:client-list")
 
+    def form_valid(self, form):
+        user = form.save(commit=False)
+
+        password = form.cleaned_data.get("password")
+        user.set_password(password)
+        user.save()
+
+        return super().form_valid(form)
+
 
 class ClientDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Client
